@@ -5,12 +5,14 @@ public class Transition {
     private char nextState;
     private char readState;
     private char writeState;
+    private char direction;
 
-    public Transition(char currentState, char nextState, char readState, char writeState) {
+    public Transition(char currentState, char nextState, char readState, char writeState, char direction) {
         this.currentState = currentState;
         this.nextState = nextState;
         this.readState = readState;
         this.writeState = writeState;
+        this.direction = direction;
     }
 
     public char getCurrentState() {
@@ -43,5 +45,13 @@ public class Transition {
 
     public void setWriteState(char writeState) {
         this.writeState = writeState;
+    }
+
+    public char getDirection() {
+        return direction;
+    }
+
+    public void setDirection(char direction) {
+        this.direction = direction;
     }
 }

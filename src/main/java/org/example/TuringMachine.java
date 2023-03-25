@@ -6,22 +6,30 @@ public class TuringMachine {
 
     private String input;
     private Tape tape;
-    private ArrayList <Transition> transitions;
+    private ArrayList <Transition> stateRules;
     private char startState;
     private char currentState;
 
-    public TuringMachine(String input, Tape tape, ArrayList<Transition> transitions, char startState, char currentState) {
+    public TuringMachine(String input, Tape tape, ArrayList<Transition> stateRule, char startState, char currentState) {
         this.input = input;
         this.tape = tape;
-        this.transitions = transitions;
+        this.stateRules = stateRule;
         this.startState = startState;
         this.currentState = currentState;
     }
 
     public TuringMachine(char startState, String inputString){
         tape = new Tape(inputString);
-
+        stateRules = new ArrayList<>();
+        this.startState = startState;
+        this.input = inputString;
     }
+
+    public void addStateRule(Transition transition){
+        stateRules.add(transition);
+    }
+
+    //Getters and Setters
 
     public String getInput() {
         return input;
@@ -39,12 +47,12 @@ public class TuringMachine {
         this.tape = tape;
     }
 
-    public ArrayList<Transition> getTransitions() {
-        return transitions;
+    public ArrayList<Transition> getStateRules() {
+        return stateRules;
     }
 
-    public void setTransitions(ArrayList<Transition> transitions) {
-        this.transitions = transitions;
+    public void setStateRules(ArrayList<Transition> stateRules) {
+        this.stateRules = stateRules;
     }
 
     public char getStartState() {

@@ -1,10 +1,14 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public class Tape {
 
     public char BLANK = 'Ø';
+
+    public ArrayList TAPEALPHABET = new ArrayList<>(Arrays.asList("a", "b", "c","N","K","F","S"));
     private Stack <Character> leftTape;
     private Stack <Character> rightTape;
     private char head;
@@ -16,6 +20,12 @@ public class Tape {
     }
 
     public Tape(String input){
+
+        try {
+            validateInput(input);
+        }catch (InvalidInputException e){
+            System.out.println(e);
+        }
         leftTape = new Stack<>();
         rightTape = new Stack<>();
 
@@ -31,6 +41,24 @@ public class Tape {
         // the head is over head
         head = rightTape.pop();
     }
+
+    public void validateInput(String input) throws InvalidInputException{
+
+        //Reading through the String, checking if it is a valid input
+        for(int i = input.length() -1 ; i>=0 ; i--){
+            if(!TAPEALPHABET.contains(input.charAt(i))) {
+                throw new InvalidInputException("String is not Present is the Tape Alphabet");
+            }
+        }
+    }
+
+    class InvalidInputException extends Exception{
+
+        public InvalidInputException(String str){
+            super(str);
+        }
+    }
+
 
     public void moveHeadLeft(){
         rightTape.push(head);
