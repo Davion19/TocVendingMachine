@@ -4,15 +4,50 @@ import java.util.Stack;
 
 public class Tape {
 
+    public char BLANK = 'Ø';
     private Stack <Character> leftTape;
     private Stack <Character> rightTape;
-
-    private char currentCharacter;
+    private char head;
 
     public Tape(Stack<Character> leftTape, Stack<Character> rightTape, char currentCharacter) {
         this.leftTape = leftTape;
         this.rightTape = rightTape;
-        this.currentCharacter = currentCharacter;
+        this.head = currentCharacter;
+    }
+
+    public Tape(String input){
+        leftTape = new Stack<>();
+        rightTape = new Stack<>();
+
+        // Adding an End for the input String
+        rightTape.push(BLANK);
+
+        // Pushing the Input to the Stack
+        for(int i= input.length() -1; i>=0; i-- ){
+            rightTape.push(input.charAt(i));
+        }
+
+        // Getting the character at the top of the string,
+        // the head is over head
+        head = rightTape.pop();
+    }
+
+    public void moveHeadLeft(){
+        rightTape.push(head);
+        if(leftTape.isEmpty()){
+            leftTape.push(BLANK);
+        }
+
+        head = leftTape.pop();
+    }
+
+    public void moveHeadRight(){
+        leftTape.push(head);
+        if(leftTape.isEmpty()){
+            rightTape.push(BLANK);
+        }
+
+        head = rightTape.pop();
     }
 
     public Stack<Character> getLeftTape() {
@@ -31,11 +66,11 @@ public class Tape {
         this.rightTape = rightTape;
     }
 
-    public char getCurrentCharacter() {
-        return currentCharacter;
+    public char getHead() {
+        return head;
     }
 
-    public void setCurrentCharacter(char currentCharacter) {
-        this.currentCharacter = currentCharacter;
+    public void setHead(char head) {
+        this.head = head;
     }
 }
