@@ -121,17 +121,17 @@ public class TuringMachine {
 
         for(Transition rule : stateRules){
             if(Objects.equals(rule.getCurrentState(), currentState)){
-                if (rule.getReadCharacter() == tape.getHead()){
+                if (rule.getReadCharacter() == tape.getHead() ){
                     transition = rule;
                     System.out.println("[0] " + transition.toString());
                     tape.setHead(transition.getWriteCharacter());
+
                     if(transition.getDirection() == "R"){
                         tape.moveHeadRight();
                     } else if ( transition.getDirection() == "L") {
                         tape.moveHeadLeft();
-                    }else if (tape.getHead() == BLANK){
+                    }else if (transition.getReadCharacter() == BLANK)
                         break;
-                    }
                 }
             }
         }

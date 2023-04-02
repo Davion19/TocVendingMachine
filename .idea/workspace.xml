@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="added state change">
+    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="Turing machine working :)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Tape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Tape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
@@ -143,23 +143,26 @@
       <option name="project" value="LOCAL" />
       <updated>1680407256223</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Turing machine working :)">
+      <created>1680408340343</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680408340343</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="added transitions" />
     <MESSAGE value="added state change" />
-    <option name="LAST_COMMIT_MESSAGE" value="added state change" />
+    <MESSAGE value="Turing machine working :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Turing machine working :)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>121</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
           <line>109</line>
@@ -172,33 +175,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>128</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="26" />
+          <line>125</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -65,9 +65,11 @@ public class Tape {
         }
 
         head = leftTape.pop();
+        System.out.println("<> Tape head location \t[" + getHead() + "]");
     }
 
     public void moveHeadRight(){
+
         System.out.println("<> Tape head moving right");
 
         leftTape.push(head);
@@ -78,6 +80,8 @@ public class Tape {
              head = rightTape.pop();
         }
 
+
+        System.out.println("<> Tape head location \t[" + getHead() + "]");
 
     }
 
