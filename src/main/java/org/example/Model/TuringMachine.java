@@ -33,8 +33,29 @@ public class TuringMachine {
         setStateRules();
         start();
     }
-
+    
+    
     public String welcomeText(){
+        System.out.println("[0] Items available");
+        
+        // list totalMoney
+        System.out.println("Total money: " + totalMoney.toString());
+        
+        // list tape's current character
+        System.out.println("Current character: " + tape.getHead());
+        
+        // list items in register
+        for (Item item : items.getItems()) {
+            System.out.println(item.getName() + " count: " + items.getCount(item));
+        }
+        
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.next();
+        return input;
+    }
+
+   /* public String welcomeText(){
         System.out.println("[0] Items available");
         // TODO list money and character
         //TODO each item in the register and for each unique item give the count and the item name
@@ -43,7 +64,7 @@ public class TuringMachine {
 
         String input = scanner.next();
         return input;
-    }
+    }*/
 
     public void setStateRules(){
 
