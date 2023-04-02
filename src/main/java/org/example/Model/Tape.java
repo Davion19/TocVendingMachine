@@ -6,7 +6,11 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class Tape {
-
+    public static final char BLANK = '$';
+    public static final Character[] TAPEALPHABET = {'a','b','c','N','K','F','S',BLANK} ;
+    private Stack <Character> leftTape;
+    private Stack <Character> rightTape;
+    private char head;
 
     static class InvalidInputException extends Exception{
 
@@ -14,14 +18,6 @@ public class Tape {
             super(str);
         }
     }
-
-
-
-    public static final char BLANK = '$';
-    public static final Character[] TAPEALPHABET = {'a','b','c','N','K','F','S',BLANK} ;
-    private Stack <Character> leftTape;
-    private Stack <Character> rightTape;
-    private char head;
 
     public Tape(Character [] tapeAlphabet, Stack<Character> leftTape, Stack<Character> rightTape, char head) {
 
@@ -34,7 +30,7 @@ public class Tape {
 
     }
 
-    public void input(String input) throws InvalidInputException {
+    public void input(String input) {
 
         leftTape = new Stack<>();
         rightTape = new Stack<>();
@@ -47,15 +43,10 @@ public class Tape {
             rightTape.push(input.charAt(i));
             System.out.println(input.charAt(i));
         }
-
         // Getting the character at the top of the string,
         // the head is over head
         head = rightTape.pop();
     }
-
-
-
-
 
     // Head is pointing at the top of rightTape, to move in any
     //direction we push the value in head in the opposite direction
@@ -64,6 +55,8 @@ public class Tape {
     //If the direction is empty, the blank or null clause is pushed
     // This ensures the head is always pointing at a valid location
     public void moveHeadLeft(){
+
+        System.out.println("<> Tape head moving left");
         rightTape.push(head);
         if(leftTape.isEmpty()){
             leftTape.push(BLANK);
@@ -73,8 +66,13 @@ public class Tape {
     }
 
     public void moveHeadRight(){
+        System.out.println("<> Tape head moving right");
+
         leftTape.push(head);
         if(leftTape.isEmpty()){
+            rightTape.push(BLANK);
+        }
+        if (rightTape.isEmpty()){
             rightTape.push(BLANK);
         }
 

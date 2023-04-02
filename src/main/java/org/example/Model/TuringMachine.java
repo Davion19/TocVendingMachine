@@ -1,9 +1,6 @@
 package org.example.Model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static org.example.Model.Tape.BLANK;
 
@@ -21,21 +18,31 @@ public class TuringMachine {
     public TuringMachine(String input) {
 
         try {
-            tape.input(input);
+            validateInput(input);
         }catch (Tape.InvalidInputException e){
             System.out.println(e);
+
+            currentState = "qr";
+
         }
 
+        tape.input(input);
 
+        //welcomeText();
 
         setStateRules();
+        start();
     }
 
-    public void welcomeText(){
+    public String welcomeText(){
         System.out.println("[0] Items available");
-
+        // TODO list money and character
         //TODO each item in the register and for each unique item give the count and the item name
         System.out.println("[0]");
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.next();
+        return input;
     }
 
     public void setStateRules(){
@@ -92,13 +99,50 @@ public class TuringMachine {
 
     }
 
+    public void start(){
+
+        currentState = startState;
+        Transition currentTransition = null;
+
+        do {
+            if (currentTransition != null){
+                currentState = currentTransition.getNextState();
+            }
+            currentTransition = changeState(currentState);
+
+        }while(currentTransition != null);
+
+    }
+
+    public Transition changeState(String state){
+
+        Transition transition = null;
+
+        for(Transition rule : stateRules){
+            if(Objects.equals(rule.getCurrentState(), currentState)){
+                if (rule.getReadCharacter() == tape.getHead()){
+                    transition = rule;
+                    System.out.println("[0] " + transition.toString());
+                    tape.setHead(transition.getWriteCharacter());
+                    if(transition.getDirection() == "R"){
+                        tape.moveHeadRight();
+                    } else if ( transition.getDirection() == "L") {
+                        tape.moveHeadLeft();
+                    }
+                }
+            }
+        }
+
+        return transition;
+    }
+
     public void validateInput(String input) throws Tape.InvalidInputException {
 
         //Reading through the String, checking if it is a valid input
         for(int i = input.length() -1 ; i>=0 ; i--){
             char c = input.charAt(i);
             if(!Arrays.asList(Tape.TAPEALPHABET).contains(input.charAt(i))) {
-                throw new Tape.InvalidInputException("String is not Present is the Tape Alphabet");
+                throw new  Tape.InvalidInputException("String is not Present is the Tape Alphabet");
             }
         }
     }

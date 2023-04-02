@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Jupiter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/ItemRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/Vending Machine.fxml" afterDir="false" />
+    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="added transitions">
+      <change afterPath="$PROJECT_DIR$/InvalidInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Tape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Transition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Transition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Tape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Tape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,12 +130,20 @@
       <option name="project" value="LOCAL" />
       <updated>1679758045050</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added transitions">
+      <created>1680404649165</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680404649166</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="added transitions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added transitions" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
