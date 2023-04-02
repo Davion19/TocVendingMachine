@@ -69,9 +69,7 @@ public class TuringMachine {
         stateRules.add(new Transition("q2","q2",'K','K',"R"));
         stateRules.add(new Transition("q2","q2",'F','F',"R"));
         stateRules.add(new Transition("q2","qa",BLANK,BLANK,"R"));
-
-        //Accept input from user
-        stateRules.add(new Transition("q2","qa",BLANK,BLANK,"R"));
+        stateRules.add(new Transition("qa","qa"));
 
 
         //Restock String
@@ -130,8 +128,7 @@ public class TuringMachine {
                         tape.moveHeadRight();
                     } else if ( transition.getDirection() == "L") {
                         tape.moveHeadLeft();
-                    }else if (transition.getReadCharacter() == BLANK)
-                        break;
+                    }
                 }
             }
         }

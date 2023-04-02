@@ -6,6 +6,7 @@ public class Transition {
     private char readCharacter;
     private char writeCharacter;
     private String direction;
+    boolean  finalState;
 
     public Transition(String currentState, String nextState, char readCharacter, char writeCharacter, String direction) {
         this.currentState = currentState;
@@ -13,16 +14,12 @@ public class Transition {
         this.readCharacter = readCharacter;
         this.writeCharacter = writeCharacter;
         this.direction = direction;
+        finalState = false;
     }
 
-    public Transition (String currentState, String nextState, String direction){
+    public Transition (String currentState, String nextState){
         this.currentState = currentState;
         this.nextState = nextState;
-        this.direction = direction;
-    }
-
-    public Transition(String currentState){
-        this.currentState = currentState;
     }
 
     public String getCurrentState() {
@@ -65,14 +62,23 @@ public class Transition {
         this.direction = direction;
     }
 
+    public boolean isFinalState() {
+        return finalState;
+    }
+
+    public void setFinalState(boolean finalState) {
+        this.finalState = finalState;
+    }
+
     @Override
     public String toString() {
         return "Transition{" +
                 "currentState='" + currentState + '\'' +
                 ", nextState='" + nextState + '\'' +
-                ", readCharacter='" + readCharacter + '\'' +
-                ", writeCharacter='" + writeCharacter + '\'' +
+                ", readCharacter=" + readCharacter +
+                ", writeCharacter=" + writeCharacter +
                 ", direction='" + direction + '\'' +
+                ", finalState=" + finalState +
                 '}';
     }
 }
