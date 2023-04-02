@@ -32,6 +32,8 @@ public class Tape {
 
     public void input(String input) {
 
+        StringBuilder stringBuilder = new StringBuilder(input);
+        input = stringBuilder.append(BLANK).toString();
         leftTape = new Stack<>();
         rightTape = new Stack<>();
 
@@ -72,11 +74,11 @@ public class Tape {
         if(leftTape.isEmpty()){
             rightTape.push(BLANK);
         }
-        if (rightTape.isEmpty()){
-            rightTape.push(BLANK);
+        if (!rightTape.isEmpty()){
+             head = rightTape.pop();
         }
 
-        head = rightTape.pop();
+
     }
 
     public char getBLANK() {

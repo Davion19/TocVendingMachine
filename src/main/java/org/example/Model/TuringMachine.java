@@ -68,6 +68,7 @@ public class TuringMachine {
         stateRules.add(new Transition("q2","q2",'S','S',"R"));
         stateRules.add(new Transition("q2","q2",'K','K',"R"));
         stateRules.add(new Transition("q2","q2",'F','F',"R"));
+        stateRules.add(new Transition("q2","qa",BLANK,BLANK,"R"));
 
         //Accept input from user
         stateRules.add(new Transition("q2","qa",BLANK,BLANK,"R"));
@@ -87,7 +88,7 @@ public class TuringMachine {
         stateRules.add(new Transition("q12","qa2",BLANK,BLANK,"R"));
 
         //Error Transitions
-        stateRules.add(new Transition("q0","qr",BLANK,BLANK,"R"));
+/*        stateRules.add(new Transition("q0","qr",BLANK,BLANK,"R"));
         stateRules.add(new Transition("q1","qr",BLANK,BLANK,"R"));
         stateRules.add(new Transition("q5","qr",BLANK,BLANK,"R"));
         stateRules.add(new Transition("q6","qr",BLANK,BLANK,"R"));
@@ -95,7 +96,7 @@ public class TuringMachine {
         stateRules.add(new Transition("q8","qr",BLANK,BLANK,"R"));
         stateRules.add(new Transition("q9","qr",BLANK,BLANK,"R"));
         stateRules.add(new Transition("q10","qr",BLANK,BLANK,"R"));
-        stateRules.add(new Transition("q11","qr",BLANK,BLANK,"R"));
+        stateRules.add(new Transition("q11","qr",BLANK,BLANK,"R"));*/
 
     }
 
@@ -128,6 +129,8 @@ public class TuringMachine {
                         tape.moveHeadRight();
                     } else if ( transition.getDirection() == "L") {
                         tape.moveHeadLeft();
+                    }else if (tape.getHead() == BLANK){
+                        break;
                     }
                 }
             }
